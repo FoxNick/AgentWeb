@@ -412,7 +412,7 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
 
             String action = intent.getAction();
 
-            if (action.equals("com.agentweb.cancelled")) {
+            if ("com.agentweb.cancelled".equals(action)) {
 
                 try {
 

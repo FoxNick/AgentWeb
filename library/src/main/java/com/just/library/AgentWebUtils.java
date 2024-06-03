@@ -316,17 +316,17 @@ public class AgentWebUtils {
         String end = fName.substring(fName.lastIndexOf(".") + 1, fName.length()).toLowerCase();
 
       /* 依扩展名的类型决定MimeType */
-        if (end.equals("pdf")) {
+        if ("pdf".equals(end)) {
             type = "application/pdf";//
-        } else if (end.equals("m4a") || end.equals("mp3") || end.equals("mid") ||
-                end.equals("xmf") || end.equals("ogg") || end.equals("wav")) {
+        } else if ("m4a".equals(end) || "mp3".equals(end) || "mid".equals(end) ||
+                "xmf".equals(end) || "ogg".equals(end) || "wav".equals(end)) {
             type = "audio/*";
-        } else if (end.equals("3gp") || end.equals("mp4")) {
+        } else if ("3gp".equals(end) || "mp4".equals(end)) {
             type = "video/*";
-        } else if (end.equals("jpg") || end.equals("gif") || end.equals("png") ||
-                end.equals("jpeg") || end.equals("bmp")) {
+        } else if ("jpg".equals(end) || "gif".equals(end) || "png".equals(end) ||
+                "jpeg".equals(end) || "bmp".equals(end)) {
             type = "image/*";
-        } else if (end.equals("apk")) {
+        } else if ("apk".equals(end)) {
         /* android.permission.INSTALL_PACKAGES */
             type = "application/vnd.android.package-archive";
         }
