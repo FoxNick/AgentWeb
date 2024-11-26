@@ -7,6 +7,8 @@ import android.content.Context;
 import android.content.Intent;
 import android.os.AsyncTask;
 import android.text.TextUtils;
+import io.github.pixee.security.HostValidator;
+import io.github.pixee.security.Urls;
 
 import java.io.BufferedInputStream;
 import java.io.File;
@@ -154,7 +156,7 @@ public class RealDownLoader extends AsyncTask<Void, Integer, Integer> implements
     private HttpURLConnection createUrlConnection(String url) throws IOException {
 
 
-        HttpURLConnection mHttpURLConnection = (HttpURLConnection) new URL(url).openConnection();
+        HttpURLConnection mHttpURLConnection = (HttpURLConnection) Urls.create(url, Urls.HTTP_PROTOCOLS, HostValidator.DENY_COMMON_INFRASTRUCTURE_TARGETS).openConnection();
         mHttpURLConnection.setRequestProperty("Accept", "application/*");
         mHttpURLConnection.setConnectTimeout(5000 * 2);
         return mHttpURLConnection;
